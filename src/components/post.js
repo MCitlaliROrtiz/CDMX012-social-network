@@ -5,6 +5,7 @@ import { salir } from '../lib/firebaseFunction.js';
 export const post = () => {
   const muroDePrueba = document.createElement('section');
   const head = document.createElement('header');
+  head.className = 'head';
   const ornamentLogo = document.createElement('img');
   ornamentLogo.src = './img/melomaniacs.jpg';
   head.appendChild(ornamentLogo);

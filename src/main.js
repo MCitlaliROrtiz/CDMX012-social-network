@@ -1,7 +1,9 @@
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
 
+// eslint-disable-next-line import/no-cycle
 import { login } from './components/login.js';
 
+// eslint-disable-next-line import/no-cycle
 import { post } from './components/post.js';
 
 const principal = document.getElementById('Root');
