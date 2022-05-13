@@ -20,9 +20,7 @@ export const login = () => {
   home.appendChild(brand);
   const loginWhitGoogle = document.createElement('button');
   loginWhitGoogle.className = 'loginWhitGoogle';
-  
   loginWhitGoogle.src = './img/google_icon-icons.com_62736.jpg';
-  
   loginWhitGoogle.textContent = 'Login with google';
   loginWhitGoogle.addEventListener('click', () => {
     entraConGoogle();
