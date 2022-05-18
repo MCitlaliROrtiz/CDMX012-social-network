@@ -18,14 +18,17 @@ export const login = () => {
   slogan.textContent = 'What are listening to?';
   brand.appendChild(slogan);
   home.appendChild(brand);
+  const buttonBox = document.createElement('section');
+  buttonBox.className = 'buttonBox';
   const loginWhitGoogle = document.createElement('button');
   loginWhitGoogle.className = 'loginWhitGoogle';
-  loginWhitGoogle.src = './img/google_icon-icons.com_62736.jpg';
+  const googleIcon = document.createElement('img');
+  googleIcon.setAttribute('src', './img/google_icon.png');
   loginWhitGoogle.textContent = 'Login with google';
   loginWhitGoogle.addEventListener('click', () => {
     entraConGoogle();
   });
-
-  home.appendChild(loginWhitGoogle);
+  buttonBox.append(googleIcon, loginWhitGoogle);
+  home.appendChild(buttonBox);
   return home;
 };
