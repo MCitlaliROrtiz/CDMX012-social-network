@@ -39,5 +39,6 @@ export const salir = () => {
   }).catch((error) => {
     // An error happened.
   });
-  console.log('saliendo');
+  // eslint-disable-next-line no-alert
+  alert('se esta cerrando la sesion');
 };

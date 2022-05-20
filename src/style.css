@@ -193,7 +193,8 @@ and (max-width: 736px){
     align-items: center;
     padding: auto;
 }
-.postContent input{
+.textarea{
+     resize:none;
     display: flex;
     margin: 0;
     height:auto;
@@ -378,9 +379,11 @@ and (min-width: 760px)  {
     }
     .postContent{
         width:60vw;
-        height:20vh;
-        display:grid;
+        height:21vh;
+        display:flex;
+        flex-direction:;
         justify-content: center;
+        background-color:black;
     }
     .postContent button{
         display: flex;
@@ -397,11 +400,11 @@ and (min-width: 760px)  {
         align-items: center;
         padding: auto;
     }
-    .postContent input{
+    .textarea{
+        border: #FFF;
+        resize: none;
         display: flex;
         margin: 0;
-        height:auto;
         width:60vw;
-        padding:2px;
-    }
+        height:20vh;
 }

@@ -16,16 +16,14 @@ export const post = () => {
   muroDePrueba.append(head);
   const textArea = document.createElement('section');
   textArea.className = 'postContent';
-  const posting = document.createElement('input');
-  posting.className = 'input';
+  const posting = document.createElement('textarea');
+  posting.className = 'textarea';
   const postButton = document.createElement('button');
   postButton.textContent = 'Post';
   textArea.append(posting, postButton);
   postButton.addEventListener('click', () => {
-    let text = posting.value;
-    localStorage.setItem('content', JSON.stringify(text));
-    console.log(text);
-    console.log(localStorage.getItem(text));
+    const text = posting.value;
+    localStorage.setItem('content', text);
   });
   const buttonReturn = document.createElement('button');
   buttonReturn.textContent = 'Log out';
