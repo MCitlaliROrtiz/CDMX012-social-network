@@ -1,5 +1,7 @@
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
+import { capturaDeDatos } from '../lib/localstorage.js';
 import { salir } from '../lib/firebaseFunction.js';
 
 export const post = () => {
@@ -20,10 +22,10 @@ export const post = () => {
   posting.className = 'textarea';
   const postButton = document.createElement('button');
   postButton.textContent = 'Post';
-  textArea.append(posting, postButton);
+  textArea.append(postButton, posting);
   postButton.addEventListener('click', () => {
     const text = posting.value;
-    localStorage.setItem('content', text);
+    capturaDeDatos(text);
   });
   const buttonReturn = document.createElement('button');
   buttonReturn.textContent = 'Log out';

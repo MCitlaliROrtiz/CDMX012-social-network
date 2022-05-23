@@ -17,9 +17,9 @@ export const entraConGoogle = () => {
     // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-      // The signed-in user info.
+      console.log(token);
       const user = result.user;
-    // ...
+      console.log(user.displayName);
     }).catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
@@ -33,6 +33,7 @@ export const entraConGoogle = () => {
 
   console.log('hola');
 };
+
 export const salir = () => {
   signOut(auth).then(() => {
     // Sign-out successful.

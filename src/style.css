@@ -176,10 +176,13 @@ and (max-width: 736px){
     padding:5%;
 }
 .postContent{
+    background-color: #FFF;
     width:60vw;
     height:20vh;
-    display:grid;
-    justify-content: center;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 2px;;
 }
 .postContent button{
     display: flex;
@@ -194,11 +197,17 @@ and (max-width: 736px){
     padding: auto;
 }
 .textarea{
+    border:none;
      resize:none;
     display: flex;
     margin: 0;
     height:auto;
-    width:250px;
+    width:50vw;
+    height:18vh;
+}
+.textarea:focus{
+
+    outline:none;
 }
 
 }
@@ -381,9 +390,9 @@ and (min-width: 760px)  {
         width:60vw;
         height:21vh;
         display:flex;
-        flex-direction:;
-        justify-content: center;
-        background-color:black;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        background-color:#FFF;
     }
     .postContent button{
         display: flex;
@@ -401,10 +410,17 @@ and (min-width: 760px)  {
         padding: auto;
     }
     .textarea{
-        border: #FFF;
+        
+        border:none;
         resize: none;
         display: flex;
         margin: 0;
         width:60vw;
         height:20vh;
+    
+    }    
+    .textarea:focus{
+
+        outline:none;
+    }
 }
