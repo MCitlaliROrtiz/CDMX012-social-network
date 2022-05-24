@@ -3,7 +3,10 @@ import { onNavigate } from '../main.js';
 
 import { dataCollection } from '../lib/localstorage.js';
 import { logOut } from '../lib/firebaseFunction.js';
+// eslint-disable-next-line import/order
+import {getAuth } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
 
+const auth = getAuth();
 export const post = () => {
   const muroDePrueba = document.createElement('section');
   muroDePrueba.className = 'muro';
@@ -16,16 +19,18 @@ export const post = () => {
   greetings.textContent = 'What are listening to?';
   head.appendChild(greetings);
   muroDePrueba.append(head);
-  const textArea = document.createElement('section');
-  textArea.className = 'postContent';
-  const posting = document.createElement('textarea');
-  posting.className = 'textarea';
+  const posting = document.createElement('section');
+  posting.className = 'postContent';
+  const textArea = document.createElement('textarea');
+  textArea.className = 'textarea';
+  textArea.setAttribute('placeholder', 'What are listening to?...');
   const postButton = document.createElement('button');
   postButton.textContent = 'Post';
-  textArea.append(postButton, posting);
+  posting.append(postButton, textArea);
   postButton.addEventListener('click', () => {
-    const text = posting.value;
-    dataCollection(text);
+    const email = auth.currentUser.email;
+    const text = textArea.value;
+    dataCollection(text, email);
   });
   const buttonReturn = document.createElement('button');
   buttonReturn.textContent = 'Log out';
@@ -33,6 +38,6 @@ export const post = () => {
     logOut();
   });
   head.append(buttonReturn);
-  muroDePrueba.append(textArea);
+  muroDePrueba.append(posting);
   return muroDePrueba;
 };
