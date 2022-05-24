@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
-import { capturaDeDatos } from '../lib/localstorage.js';
-import { salir } from '../lib/firebaseFunction.js';
+import { dataCollection } from '../lib/localstorage.js';
+import { logOut } from '../lib/firebaseFunction.js';
 
 export const post = () => {
   const muroDePrueba = document.createElement('section');
@@ -25,12 +25,12 @@ export const post = () => {
   textArea.append(postButton, posting);
   postButton.addEventListener('click', () => {
     const text = posting.value;
-    capturaDeDatos(text);
+    dataCollection(text);
   });
   const buttonReturn = document.createElement('button');
   buttonReturn.textContent = 'Log out';
   buttonReturn.addEventListener('click', () => {
-    salir();
+    logOut();
   });
   head.append(buttonReturn);
   muroDePrueba.append(textArea);

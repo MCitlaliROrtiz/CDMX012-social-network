@@ -1,5 +1,5 @@
-export const capturaDeDatos = (variable) => {
+export const dataCollection = (variable) => {
   const currentData = localStorage.getItem('content');
-  const colection = [...currentData, variable];
-  localStorage.setItem('content', colection);
+  const collection = [currentData, variable];
+  localStorage.setItem('content', collection);
 };

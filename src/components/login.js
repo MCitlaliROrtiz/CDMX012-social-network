@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { onNavigate } from '../main.js';
-import { entraConGoogle } from '../lib/firebaseFunction.js';
+import { logIn } from '../lib/firebaseFunction.js';
 
 export const login = () => {
   const home = document.createElement('section');
@@ -26,7 +26,7 @@ export const login = () => {
   googleIcon.setAttribute('src', './img/google_icon.png');
   loginWhitGoogle.textContent = 'Login with google';
   loginWhitGoogle.addEventListener('click', () => {
-    entraConGoogle();
+    logIn();
   });
   buttonBox.append(googleIcon, loginWhitGoogle);
   home.appendChild(buttonBox);
