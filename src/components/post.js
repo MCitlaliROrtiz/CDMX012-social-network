@@ -3,8 +3,9 @@ import { onNavigate } from '../main.js';
 
 import { dataCollection } from '../lib/localstorage.js';
 import { logOut } from '../lib/firebaseFunction.js';
+// eslint-disable-next-line import/no-unresolved
 // eslint-disable-next-line import/order
-import {getAuth } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
 
 const auth = getAuth();
 export const post = () => {
@@ -30,7 +31,15 @@ export const post = () => {
   postButton.addEventListener('click', () => {
     const email = auth.currentUser.email;
     const text = textArea.value;
-    dataCollection(text, email);
+    if (text === '') {
+      swal({
+        title: 'ingresa texto',
+        icon: 'error',
+        button: 'ok',
+      });
+    } else {
+      dataCollection(text, email);
+    }
   });
   const buttonReturn = document.createElement('button');
   buttonReturn.textContent = 'Log out';
