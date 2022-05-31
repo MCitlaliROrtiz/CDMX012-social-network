@@ -33,7 +33,8 @@ export const post = () => {
     const text = textArea.value;
     if (text === '') {
       swal({
-        title: 'ingresa texto',
+        title: 'Hello! you have to write something',
+        text: 'What are you listening to?',
         icon: 'error',
         button: 'ok',
       });

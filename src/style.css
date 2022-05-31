@@ -80,8 +80,6 @@ and (max-width: 736px){
 
 .buttonBox img{
     border-radius:15px;
-    width:28px;
-    height:34px;
     background-color: #FFF;
     position: absolute;
 
@@ -290,8 +288,6 @@ and (min-width: 760px)  {
     
     .buttonBox img{
         border-radius:15px;
-        width:28px;
-        height:34px;
         background-color: #FFF;
         position: absolute;
     

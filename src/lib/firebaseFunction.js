@@ -40,5 +40,9 @@ export const logOut = () => {
     // An error happened.
   });
   // eslint-disable-next-line no-alert
-  alert('se esta cerrando la sesion');
+  swal({
+    title: 'The session is closing',
+    icon: 'warning',
+    button: 'OK',
+  });
 };

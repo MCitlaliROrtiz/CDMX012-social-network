@@ -1,38 +1,46 @@
 export const dataCollection = (variable, email) => {
   const msg = {
-    texto: variable,
-    correo: email,
+    postContent: variable,
+    userEmail: email,
   };
-  
 
   const currentData = localStorage.getItem('content');
-  console.log(currentData);
+
   if (currentData === null || currentData === undefined) {
-    const collection = JSON.stringify(msg);
+    const collection = JSON.stringify([msg]);
     localStorage.setItem('content', collection);
-    console.log(localStorage.getItem('content'));
-    /*const str = [localStorage.getItem('content')];
-    const parsear = JSON.parse(str);
-    console.log(parsear);
-    console.log(str); */
+  } else if (currentData !== null || currentData !== undefined) {
+    const newCurrentData = JSON.parse(currentData);
+    newCurrentData.push(msg);
+    localStorage.setItem('content', JSON.stringify(newCurrentData));
+    const newCollection = JSON.parse(localStorage.getItem('content'));
   }
-  else{
-  const collection = [currentData, JSON.stringify(msg)];
 
-  localStorage.setItem('content', collection);
-  console.log(localStorage.getItem('content'));
-  /*const str = [localStorage.getItem('content')];
-  const parsear = JSON.parse(str);}
-  console.log(parsear)
-  console.log(str);*/ }
+  /*
 
-};
+    function createPost(post) {
+  let cardContainer=document.createElement("section");
+  cardContainer.className="cardContainer";
 
-/* const postGenerator = obj.forEach(() => {
-  const post = document.createElement('section');
-  const postCreator = document.createElement('h2');
-  postCreator.textContent = obj.email;
-const postBody = document.createElement('p');
- postBody.textContent = obj.tex
-});
+  //creacion de nodo card y sus elementos
+  let card=document.createElement("section");
+   card.style.backgroundColor=item.bgColor;
+   //console.log(card.style);
+   card.className="cardStyle"
+   let image=document.createElement("img");
+   image.src=item.image;
+   let name=document.createElement("p");
+   name.textContent=item.id;
+   card.appendChild(name);
+   card.appendChild(image);
+   //creacion del nodo reverse y sus elementos
+   let reverse=document.createElement("section");
+   reverse.className="cardReverse";
+   //insercion de nodos card y reverse en nodo el
+   cardContainer.appendChild(card);
+   cardContainer.appendChild(reverse);
+    //evento a para girar tarjetas
+    el.appendChild(cardContainer)
+  }
 */
+};
