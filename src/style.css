@@ -1,6 +1,7 @@
 body{
+    background-color: black;
     margin:0%;
-    height:100%;
+    height:auto;
     width:100%;
 }
 
@@ -207,6 +208,11 @@ and (max-width: 736px){
 
     outline:none;
 }
+.postContainer{
+    background-color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size:smaller;
+}
 
 }
 
@@ -222,7 +228,7 @@ and (min-width: 760px)  {
     #Root{
         background-color:black;
         width:100vw;
-        height:100vh;
+        height:auto;
         display:grid;
         align-items:center;
         justify-content:center;
@@ -412,11 +418,22 @@ and (min-width: 760px)  {
         display: flex;
         margin: 0;
         width:60vw;
-        height:20vh;
+        height:auto;
     
     }    
     .textarea:focus{
 
         outline:none;
+    }
+    .postContainer{
+        background-color: #FFF;
+        font-family: 'Roboto', sans-serif;
+        font-size:smaller;
+        margin:5px;
+    }
+  
+    .postContainer p{
+        font-family: 'Roboto', sans-serif;
+        font-size:smaller;
     }
 }

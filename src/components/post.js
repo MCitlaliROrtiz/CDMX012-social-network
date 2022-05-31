@@ -39,7 +39,7 @@ export const post = () => {
         button: 'ok',
       });
     } else {
-      dataCollection(text, email);
+     muroDePrueba.append(dataCollection(text, email));
     }
   });
   const buttonReturn = document.createElement('button');
