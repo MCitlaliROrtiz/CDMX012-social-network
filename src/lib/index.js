@@ -1,11 +1,13 @@
+/* eslint-disable no-undef */
 export const postGenerator = (arr) => {
   const postFirstContainer = document.createElement('section');
   postFirstContainer.className = 'postContainer';
-
+  console.log(arr);
   arr.forEach((post) => {
     while (postFirstContainer.firstChild) {
       postFirstContainer.removeChild(postFirstContainer.firstChild);
     }
+    console.log(post);
     const postContainer = document.createElement('section');
     postContainer.className = 'postContainer';
     const uEmail = document.createElement('p');
@@ -14,13 +16,19 @@ export const postGenerator = (arr) => {
     text.textContent = post.postContent;
     postContainer.append(uEmail);
     postContainer.append(text);
-    const deleteButton = document.createElement('button');
-    deleteButton.className = 'deleteButton';
-    deleteButton.textContent = 'delete';
-    deleteButton.addEventListener('click', () => {
-      console.log('hola!!');
+    const imgDelete = document.createElement('img');
+    imgDelete.setAttribute('src', './img/delete.png');
+    imgDelete.className = 'delete';
+    imgDelete.addEventListener('click', () => {
+      swal({
+        title: 'Sorry!',
+        text: 'your message was deleted',
+        icon: 'error',
+        button: 'ok',
+      });
+      postFirstContainer.removeChild(postContainer);
     });
-    postContainer.append(deleteButton);
+    postContainer.append(imgDelete);
     postFirstContainer.append(postContainer);
   });
   return postFirstContainer;

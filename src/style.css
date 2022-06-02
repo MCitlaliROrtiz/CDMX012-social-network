@@ -429,11 +429,17 @@ and (min-width: 760px)  {
         background-color: #FFF;
         font-family: 'Roboto', sans-serif;
         font-size:smaller;
+        height: auto;
         margin:5px;
+        width:60vw;
     }
   
     .postContainer p{
         font-family: 'Roboto', sans-serif;
         font-size:smaller;
+    }
+    .delete{
+        cursor:pointer; 
+        cursor: hand;
     }
 }

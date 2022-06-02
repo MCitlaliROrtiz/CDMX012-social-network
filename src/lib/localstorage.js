@@ -23,3 +23,6 @@ export const dataCollection = (variable, email) => {
   }
   return postBox;
 };
+
+
+
