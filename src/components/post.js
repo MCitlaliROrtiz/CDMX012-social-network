@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
@@ -5,7 +6,10 @@ import { dataCollection } from '../lib/localstorage.js';
 import { logOut } from '../lib/firebaseFunction.js';
 // eslint-disable-next-line import/no-unresolved
 // eslint-disable-next-line import/order
+// eslint-disable-next-line import/no-unresolved
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js';
+
+import { postGenerator } from '../lib/localStorageFunctions.js';
 
 const auth = getAuth();
 export const post = () => {
@@ -29,9 +33,15 @@ export const post = () => {
   postButton.textContent = 'Post';
   posting.append(postButton, textArea);
   postButton.addEventListener('click', () => {
+    const postContainer = document.querySelector('.postContainer');
+    console.log(postContainer);
+    while (postContainer.firstChild) {
+      postContainer.removeChild(postContainer.firstChild);
+    }
     const email = auth.currentUser.email;
     const text = textArea.value;
     if (text === '') {
+      // eslint-disable-next-line no-undef
       swal({
         title: 'Hello! you have to write something',
         text: 'What are you listening to?',
@@ -48,7 +58,12 @@ export const post = () => {
   buttonReturn.addEventListener('click', () => {
     logOut();
   });
+  const collection = JSON.parse(localStorage.getItem('content'));
+  if (collection === null) {
+    muroDePrueba.append(posting);
+  } else {
+    muroDePrueba.append(posting, postGenerator(collection));
+  }
   head.append(buttonReturn);
-  muroDePrueba.append(posting);
   return muroDePrueba;
 };

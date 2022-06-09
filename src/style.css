@@ -13,7 +13,7 @@ and (max-width: 736px){
 #Root{
     background-color:black;
     width:100vw;
-    height:100vh;
+    height:auto;
     display:grid;
     align-items:center;
     justify-content:center;
@@ -213,6 +213,10 @@ and (max-width: 736px){
     font-family: 'Roboto', sans-serif;
     font-size:smaller;
 }
+.delete{
+    cursor:pointer; 
+    cursor: hand;
+}
 
 }
 
@@ -230,6 +234,7 @@ and (min-width: 760px)  {
         width:100vw;
         height:auto;
         display:grid;
+        align-content: center;
         align-items:center;
         justify-content:center;
     
@@ -357,19 +362,17 @@ and (min-width: 760px)  {
         justify-items: center;
          row-gap:5vh;
         width:80vw;
-        height:80vh;
+        height:auto;
         
     }
     .head{
-        height:8vh;
-        width:80vw;
-        display:flex;
-        flex-direction:row;
-        align-items:stretch;
-        justify-content:center;
-        align-content: stretch;
-        padding-top: 0%;
-        margin-top: 0%;
+        height: 8vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    padding-top: 0%;
+    justify-content: space-between;
+       
 
     }
     .head button{
@@ -390,11 +393,11 @@ and (min-width: 760px)  {
     }
     .postContent{
         width:60vw;
-        height:21vh;
+        height:15vh;
         display:flex;
         flex-direction: row-reverse;
         align-items: flex-end;
-        background-color:#FFF;
+        background-color:#FFF
     }
     .postContent button{
         display: flex;
@@ -414,11 +417,13 @@ and (min-width: 760px)  {
     .textarea{
         
         border:none;
+        font-family: 'Roboto', sans-serif;
+        font-size: larger;
         resize: none;
         display: flex;
         margin: 0;
         width:60vw;
-        height:auto;
+        height:14vh;
     
     }    
     .textarea:focus{
@@ -428,18 +433,25 @@ and (min-width: 760px)  {
     .postContainer{
         background-color: #FFF;
         font-family: 'Roboto', sans-serif;
-        font-size:smaller;
+        font-size: larger;
         height: auto;
         margin:5px;
         width:60vw;
+        border:5px solid red;
     }
   
     .postContainer p{
         font-family: 'Roboto', sans-serif;
-        font-size:smaller;
+        font-size:medium;
     }
     .delete{
         cursor:pointer; 
         cursor: hand;
+    }
+    .postFirstContainer{
+        border:5px solid purple;
+    }
+    .generatedPost{
+        border:5px solid green;
     }
 }
