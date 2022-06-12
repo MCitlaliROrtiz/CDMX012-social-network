@@ -8,7 +8,6 @@ export const dataCollection = (variable, email) => {
 
   const currentData = localStorage.getItem('content');
   const postBox = document.createElement('section');
-
   postBox.className = 'postBox';
   if (currentData === null || currentData === undefined) {
     const collection = guardarEnLocalStorage([msg]);

@@ -181,7 +181,8 @@ and (max-width: 736px){
     display:flex;
     flex-direction: row-reverse;
     align-items: flex-end;
-    padding: 2px;;
+    border-radius:5px;
+    padding: 2px;
 }
 .postContent button{
     display: flex;
@@ -210,6 +211,7 @@ and (max-width: 736px){
 }
 .postContainer{
     background-color: #FFF;
+    border-radius:5px;
     font-family: 'Roboto', sans-serif;
     font-size:smaller;
 }
@@ -392,12 +394,14 @@ and (min-width: 760px)  {
         padding:5%;
     }
     .postContent{
-        width:60vw;
+        border-radius:10px;
+        width:63vw;
         height:15vh;
         display:flex;
         flex-direction: row-reverse;
         align-items: flex-end;
-        background-color:#FFF
+        background-color:#FFF;
+        padding:5px;
     }
     .postContent button{
         display: flex;
@@ -422,7 +426,7 @@ and (min-width: 760px)  {
         resize: none;
         display: flex;
         margin: 0;
-        width:60vw;
+        width:56vw;
         height:14vh;
     
     }    
@@ -432,26 +436,26 @@ and (min-width: 760px)  {
     }
     .postContainer{
         background-color: #FFF;
+        border-radius:10px;
         font-family: 'Roboto', sans-serif;
         font-size: larger;
         height: auto;
-        margin:5px;
+        margin:auto;
         width:60vw;
-        border:5px solid red;
+        
     }
   
     .postContainer p{
         font-family: 'Roboto', sans-serif;
         font-size:medium;
+        padding: auto;
     }
     .delete{
         cursor:pointer; 
         cursor: hand;
     }
-    .postFirstContainer{
-        border:5px solid purple;
-    }
-    .generatedPost{
-        border:5px solid green;
+    .postBox{
+        
+        margin:10px;;
     }
 }

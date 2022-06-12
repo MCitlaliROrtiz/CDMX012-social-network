@@ -1,6 +1,7 @@
 /* eslint-disable import/order */
 // eslint-disable-next-line import/no-cycle
-import { onNavigate } from '../main.js';
+// eslint-disable-next-line no-unused-vars
+// import { onNavigate } from '../main.js';
 
 import { dataCollection } from '../lib/localstorage.js';
 import { logOut } from '../lib/firebaseFunction.js';
@@ -32,12 +33,10 @@ export const post = () => {
   const postButton = document.createElement('button');
   postButton.textContent = 'Post';
   posting.append(postButton, textArea);
+  const postBox = document.createElement('section');
+  postBox.className = 'postBox';
+  muroDePrueba.append(posting, postBox);
   postButton.addEventListener('click', () => {
-    const postContainer = document.querySelector('.postContainer');
-    console.log(postContainer);
-    while (postContainer.firstChild) {
-      postContainer.removeChild(postContainer.firstChild);
-    }
     const email = auth.currentUser.email;
     const text = textArea.value;
     if (text === '') {
@@ -49,7 +48,7 @@ export const post = () => {
         button: 'ok',
       });
     } else {
-      muroDePrueba.append(dataCollection(text, email));
+      postBox.append(dataCollection(text, email));
       textArea.value = '';
     }
   });
@@ -59,11 +58,13 @@ export const post = () => {
     logOut();
   });
   const collection = JSON.parse(localStorage.getItem('content'));
-  if (collection === null) {
+  /* if (collection === null) {
     muroDePrueba.append(posting);
-  } else {
-    muroDePrueba.append(posting, postGenerator(collection));
+  } else */
+  if (collection !== null) {
+    postBox.append(postGenerator(collection));
   }
+
   head.append(buttonReturn);
   return muroDePrueba;
 };

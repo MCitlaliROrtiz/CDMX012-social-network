@@ -7,14 +7,16 @@ export const guardarEnLocalStorage = (msg) => {
   const collection = JSON.stringify(msg);
   localStorage.setItem('content', collection);
 };
+const postFirstContainer = document.createElement('section');
+postFirstContainer.className = 'postFirstContainer';
 
 export const postGenerator = (arr) => {
-  const postFirstContainer = document.createElement('section');
-  postFirstContainer.className = 'postFirstContainer';
-
+  while (postFirstContainer.firstChild) {
+    postFirstContainer.removeChild(postFirstContainer.firstChild);
+  }
   arr.forEach((post, ind) => {
     const generatedPost = document.createElement('section');
-    generatedPost.className = 'postContainer generatedPost';
+    generatedPost.className = 'generatedPost postContainer';
     const uEmail = document.createElement('p');
     uEmail.textContent = post.userEmail;
     const text = document.createElement('p');
@@ -34,9 +36,9 @@ export const postGenerator = (arr) => {
           icon: 'error',
           button: 'ok',
         });
-        postFirstContainer.removeChild(generatedPost);
         arr.splice(ind, 1);
         guardarEnLocalStorage(arr);
+        postFirstContainer.removeChild(generatedPost);
       } else {
         imgDelete.style.display = 'none';
         // eslint-disable-next-line no-undef
